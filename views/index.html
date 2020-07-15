@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>My beautiful homepage</title>
+		<link rel="stylesheet" href="../public/css/style.css">
 	</head>
 	<header>
 		<!-- Navbar: I know there is a way to grab HTML and 'yield' it on a default layout, but I've yet to learn a way to do this with JS -->
@@ -15,56 +16,45 @@
 	<body>
 		<h1>Home</h1>
 		<p>Welcome to my Weather application!</p>
-		<form class="" action="" method="post">
-			<label for="search">Enter your postal code: </label>
-			<input type= "number" name="search" value="">
+		<form class="searchbar" action="" method="post">
+			<label for="search">Enter your postal code:</label>
+			<input type= "number" name="search" id="search">
 			<input type="submit" name="submit" value="Submit">
 		</form>
-		<div class="">
+		<div class="cards">
 			<h2>Weather for some popular cities:</h2>
-			<table>
-				<thead>
-					<tr>
-						<th> <img src="https://www.trbimg.com/img-5a3d3316/turbine/ct-edit-amazon-chicago-rank-edit-20171206" alt="Chicago" width="200em"> </th>
-						<th> <img src="https://cbsnews1.cbsistatic.com/hub/i/2014/02/05/f4aa5c7b-7949-4f8e-8141-f9421db78fda/manhattan2.jpg" alt="New York" width="200em"> </th>
-						<th> <img src="https://mewanttravel.com/wp-content/uploads/2016/01/15882405713_7a51be7dd6_o.jpg" alt="San Francisco" width="200em"> </th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Chicago</td>
-						<td>New York</td>
-						<td>San Francisco</td>
-					</tr>
-					<tr>
-						<td>
-							<ul>
-								<li>Temperature: </li>
-								<li>Precipitation: </li>
-								<li>Sunup: </li>
-								<li>Sundown: </li>
-							</ul>
-						</td>
-						<td>
-							<ul>
-								<li>Temperature: </li>
-								<li>Precipitation: </li>
-								<li>Sunup: </li>
-								<li>Sundown: </li>
-							</ul>
-						</td>
-						<td>
-							<ul>
-								<li>Temperature: </li>
-								<li>Precipitation: </li>
-								<li>Sunup: </li>
-								<li>Sundown: </li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<div class="card">
+				<h3>Chicago</h3>
+				<img src="https://www.trbimg.com/img-5a3d3316/turbine/ct-edit-amazon-chicago-rank-edit-20171206" alt="Chicago" width="200em">
+				<ul>
+					<li>Temperature: </li>
+					<li>Precipitation: </li>
+					<li>Sunup: </li>
+					<li>Sundown: </li>
+				</ul>
+			</div>
+			<div class="card">
+				<h3>New York</h3>
+				<img src="https://cbsnews1.cbsistatic.com/hub/i/2014/02/05/f4aa5c7b-7949-4f8e-8141-f9421db78fda/manhattan2.jpg" alt="New York" width="200em">
+				<ul>
+					<li>Temperature: </li>
+					<li>Precipitation: </li>
+					<li>Sunup: </li>
+					<li>Sundown: </li>
+				</ul>
+			</div>
+			<div class="card">
+				<h3>San Francisco</h3>
+				<img src="https://mewanttravel.com/wp-content/uploads/2016/01/15882405713_7a51be7dd6_o.jpg" alt="San Francisco" width="200em">
+				<ul>
+					<li>Temperature: </li>
+					<li>Precipitation: </li>
+					<li>Sunup: </li>
+					<li>Sundown: </li>
+				</ul>
+			</div>
 		</div>
+		<div class="clr"></div>
 	</body>
 	<footer>
 		<ul>

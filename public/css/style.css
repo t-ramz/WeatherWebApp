@@ -1,0 +1,65 @@
+body
+{
+	background-color: #7d7894;
+}
+
+
+.clr
+{
+	clear: both;
+}
+
+.searchbar
+{
+	text-align: center;
+}
+
+.searchbar label
+{
+	/* height: ; */
+	display: block;
+}
+
+.searchbar input[name="search"]
+{
+	width: 60%;
+	background-color: #5161fb;
+	border-color: #51619b;
+	text-align: right;
+}
+
+.cards
+{
+	width: 70%;
+	background-color: #8b7894;
+	color: #fff;
+	margin: auto;
+}
+
+.cards h2
+{
+	margin: 1em 0 0 0;
+	padding-bottom: 1em;
+	text-indent: 0.5em;
+}
+
+.cards .card
+{
+	float: left;
+	width: 33.33%;
+	padding: 0.25em;
+	border: #fff solid 0.05em;
+	background-color: inherit;
+	box-sizing: border-box;
+}
+
+.cards ul
+{
+	list-style: none;
+	padding-left: 5%;
+}
+
+footer
+{
+	padding-top: 10em;
+}

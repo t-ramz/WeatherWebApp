@@ -3,21 +3,26 @@
 	<head>
 		<meta charset="utf-8">
 		<title>About page</title>
+		<link rel="stylesheet" href="../public/css/style.css">
 	</head>
 	<header>
 		<!-- Navbar: I know there is a way to grab HTML and 'yield' it on a default layout, but I've yet to learn a way to do this with JS -->
-		<nav>
-			<a href="/">Home</a>
-			<a href="/about">About</a>
-			<a href="/contact">Contact</a>
+		<nav id="navbar">
+			<ul>
+				<li><a class="button" href="/">Home</a></li>
+				<li><a class="button" href="/about">About</a></li>
+				<li><a class="button" href="/contact">Contact</a></li>
+			</ul>
 		</nav>
 	</header>
 	<body>
-		<h1>About</h1>
-		<p>This project is for CSC-3100 "Web Programming"</p>
-		<div class="">
-			<p>The goal of this project is to provide a functional weather application with a simplistic design.</p>
-			<p>You can find the project files <a href="https://github.com/t-ramz/WeatherWebApp">here</a>.</p>
+		<div class="container">
+			<h1>About</h1>
+			<p>This project is for CSC-3100 "Web Programming"</p>
+			<div class="">
+				<p>The goal of this project is to provide a functional weather application with a simplistic design.</p>
+				<p>You can find the project files <a href="https://github.com/t-ramz/WeatherWebApp">here</a>.</p>
+			</div>
 		</div>
 	</body>
 	<footer>

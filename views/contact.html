@@ -3,32 +3,38 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Contact page</title>
+		<link rel="stylesheet" href="../public/css/style.css">
 	</head>
 	<header>
 		<!-- Navbar: I know there is a way to grab HTML and 'yield' it on a default layout, but I've yet to learn a way to do this with JS -->
-		<nav>
-			<a href="/">Home</a>
-			<a href="/about">About</a>
-			<a href="/contact">Contact</a>
+		<nav id="navbar">
+			<ul>
+				<li><a class="button" href="/">Home</a></li>
+				<li><a class="button" href="/about">About</a></li>
+				<li><a class="button" href="/contact">Contact</a></li>
+			</ul>
 		</nav>
 	</header>
 	<body>
 		<!-- Heading -->
-		<h1>Contact Page</h1>
+		<div class="container">
+			<h1>Contact Page</h1>
 
-		<!-- Form to fill out and send via some JS method defined later -->
-		<form class="" action="/" method="post">
-			<label for="name">Name: </label>
-			<input type="text" name="name" placeholder="John Doe">
-			<br>
-			<label for="email">Email: </label>
-			<input type="email" name="email" placeholder="user@example.com">
-			<br>
-			<label for="message">Concerns</label>
-			<textarea name="message" rows="8" cols="80"></textarea>
-			<br>
-			<input type="submit" name="submit" value="Submit">
-		</form>
+			<!-- Form to fill out and send via some JS method defined later -->
+			<form class="" action="/" method="post">
+				<label for="name">Name: </label>
+				<input type="text" name="name" placeholder="John Doe">
+				<br>
+				<label for="email">Email: </label>
+				<input type="email" name="email" placeholder="user@example.com">
+				<br>
+				<label for="message">Concerns</label>
+				<textarea name="message" rows="8" cols="80"></textarea>
+				<br>
+				<input type="submit" name="submit" value="Submit">
+			</form>
+		</div>
+
 	</body>
 	<footer>
 		<ul>

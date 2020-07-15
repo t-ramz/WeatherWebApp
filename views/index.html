@@ -6,21 +6,28 @@
 		<link rel="stylesheet" href="../public/css/style.css">
 	</head>
 	<header>
-		<!-- Navbar: I know there is a way to grab HTML and 'yield' it on a default layout, but I've yet to learn a way to do this with JS -->
-		<nav>
-			<a href="/">Home</a>
-			<a href="/about">About</a>
-			<a href="/contact">Contact</a>
-		</nav>
+		<div class="container">
+			<h1>Home</h1>
+			<p>Welcome to my Weather application!</p>
+		</div>
+			<!-- Navbar: I know there is a way to grab HTML and 'yield' it on a default layout, but I've yet to learn a way to do this with JS -->
+			<nav id="navbar">
+				<ul>
+					<li><a class="button" href="/">Home</a></li>
+					<li><a class="button" href="/about">About</a></li>
+					<li><a class="button" href="/contact">Contact</a></li>
+				</ul>
+			</nav>
 	</header>
 	<body>
-		<h1>Home</h1>
-		<p>Welcome to my Weather application!</p>
-		<form class="searchbar" action="" method="post">
-			<label for="search">Enter your postal code:</label>
-			<input type= "number" name="search" id="search">
-			<input type="submit" name="submit" value="Submit">
-		</form>
+		<div id="searchbar">
+			<form action="" method="post">
+				<label for="search">Enter your postal code:</label>
+				<input type= "number" name="search" id="search">
+				<input class="button" type="submit" name="submit" value="Submit">
+			</form>
+		</div>
+
 		<div class="cards">
 			<h2>Weather for some popular cities:</h2>
 			<div class="card">

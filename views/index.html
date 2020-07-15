@@ -6,10 +6,6 @@
 		<link rel="stylesheet" href="../public/css/style.css">
 	</head>
 	<header>
-		<div class="container">
-			<h1>Home</h1>
-			<p>Welcome to my Weather application!</p>
-		</div>
 			<!-- Navbar: I know there is a way to grab HTML and 'yield' it on a default layout, but I've yet to learn a way to do this with JS -->
 			<nav id="navbar">
 				<ul>
@@ -20,19 +16,24 @@
 			</nav>
 	</header>
 	<body>
-		<div id="searchbar">
-			<form action="" method="post">
-				<label for="search">Enter your postal code:</label>
-				<input type= "number" name="search" id="search">
-				<input class="button" type="submit" name="submit" value="Submit">
-			</form>
+		<div class="container">
+			<h1>Home</h1>
+			<p>Welcome to my Weather application!</p>
+			<div id="searchbar">
+				<form action="" method="post">
+					<label for="search">Enter your postal code:</label>
+					<input type= "number" name="search" id="search">
+					<input class="button" type="submit" name="submit" value="Submit">
+				</form>
+			</div>
 		</div>
+
 
 		<div class="cards">
 			<h2>Weather for some popular cities:</h2>
 			<div class="card">
-				<h3>Chicago</h3>
 				<img src="https://www.trbimg.com/img-5a3d3316/turbine/ct-edit-amazon-chicago-rank-edit-20171206" alt="Chicago" width="200em">
+				<h3>Chicago</h3>
 				<ul>
 					<li>Temperature: </li>
 					<li>Precipitation: </li>
@@ -41,8 +42,8 @@
 				</ul>
 			</div>
 			<div class="card">
-				<h3>New York</h3>
 				<img src="https://cbsnews1.cbsistatic.com/hub/i/2014/02/05/f4aa5c7b-7949-4f8e-8141-f9421db78fda/manhattan2.jpg" alt="New York" width="200em">
+				<h3>New York</h3>
 				<ul>
 					<li>Temperature: </li>
 					<li>Precipitation: </li>
@@ -51,8 +52,8 @@
 				</ul>
 			</div>
 			<div class="card">
-				<h3>San Francisco</h3>
 				<img src="https://mewanttravel.com/wp-content/uploads/2016/01/15882405713_7a51be7dd6_o.jpg" alt="San Francisco" width="200em">
+				<h3>San Francisco</h3>
 				<ul>
 					<li>Temperature: </li>
 					<li>Precipitation: </li>

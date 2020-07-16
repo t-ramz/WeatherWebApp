@@ -5,7 +5,7 @@
 
 /* Header stuff */
 
-.container
+.container, .contact-form
 {
 	width: 75%;
 	margin: auto;
@@ -75,7 +75,6 @@ body
 	border-radius: 15px;
 	color: #000;
 	margin: 1% 2.5%;
-	/* text-align: center; */
 }
 
 .cards h2
@@ -110,12 +109,35 @@ body
 	border-radius: 15px;
 }
 
+/* Form stuff */
+
+.contact-form label
+{
+	display: block;
+}
+
+.contact-form input[type="submit"]
+{
+	background-color: #005295;
+	color: #fff;
+	border-radius: 15px;
+	box-sizing: border-box;
+}
+
+.contact-form input, .contact-form textarea
+{
+	width: 100%;
+	padding: 0.5em;
+}
+
 /* Footer stuff */
 
 footer
 {
 	padding-top: 10em;
 }
+
+/* Media queries */
 
 @media(max-width:1000px) and (min-width:601px)
 {

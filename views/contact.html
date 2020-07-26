@@ -5,6 +5,7 @@
 		<title>Contact page</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	</head>
 	<header>
 		<!-- Navbar: I know there is a way to grab HTML and 'yield' it on a default layout, but I've yet to learn a way to do this with JS -->
@@ -23,19 +24,21 @@
 
 			<!-- Form to fill out and send via some JS method defined later -->
 			<form class="contact-form" action="/" method="post">
+				<div class="msg"></div>
 				<label for="name">Name: </label>
-				<input type="text" name="name" placeholder="John Doe">
+				<input type="text" name="name" id="name" placeholder="John Doe">
 				<br>
 				<label for="email">Email: </label>
-				<input type="email" name="email" placeholder="user@example.com">
+				<input type="email" name="email" id="email" placeholder="user@example.com">
 				<br>
 				<label for="message">Concerns:</label>
-				<textarea name="message" rows="8" cols="80"></textarea>
+				<textarea name="message" id="message" rows="8" cols="80"></textarea>
 				<br>
 				<input type="submit" name="submit" value="Submit">
+
 			</form>
 		</div>
-
+		<script src="main.js"></script>
 	</body>
 	<footer>
 		<ul>

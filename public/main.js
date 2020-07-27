@@ -14,14 +14,27 @@ const onSubmit = (e) =>
     message.classList.add('error');
     message.innerHTML = 'Please enter values for both your Name and Email.';
 
-    setTimeout(() => message.innerHTML = '', 5000);
+    setTimeout(() =>
+      {
+        message.innerHTML = '';
+        message.classList.remove('error');
+      },
+      5000
+    );
   }
   else if (messageInput.value === '')
   {
     e.preventDefault();
-    message.classList.remove('error')
     message.classList.add('error');
     message.innerHTML = 'Please include a message with your Concerns.'
+
+    setTimeout(() =>
+      {
+        message.innerHTML = '';
+        message.classList.remove('error');
+      },
+      5000
+    );
   }
   else
   {

@@ -1,7 +1,8 @@
 // Grab necessary elements
 const searchForm = document.querySelector('#search-form');
 const searchQuery = document.querySelector('#search');
-const display = document.querySelector('.cards')
+const display = document.querySelector('.cards');
+const message = document.querySelector('.msg');
 
 searchForm.addEventListener('submit',
   (e) =>
@@ -10,7 +11,16 @@ searchForm.addEventListener('submit',
 
     if (searchQuery.value ===  '' || searchQuery.value.length != 5)
     {
-      console.log('true');
+      message.classList.add('error');
+      message.innerHTML = 'Please enter a valid 5-digit ZIP code.';
+
+      setTimeout(() =>
+        {
+          message.innerHTML = '';
+          message.classList.remove('error');
+        },
+        5000
+      );
     }
     else
     {
@@ -18,9 +28,8 @@ searchForm.addEventListener('submit',
       {
         display.removeChild(display.firstChild);
       }
-      // display.classList.add('card')
       const newCard = document.createElement('div');
-      newCard.classList.add('card')
+      newCard.classList.add('searchcard');
       // Image
       const image = document.createElement('img');
       image.width = '200em';
@@ -52,19 +61,7 @@ searchForm.addEventListener('submit',
 
       newCard.appendChild(ul);
 
-      // newCard.innerHTML =
-      // "<div class="card">
-			// 	<img src="https://www.trbimg.com/img-5a3d3316/turbine/ct-edit-amazon-chicago-rank-edit-20171206" alt="Chicago" width="200em">
-			// 	<h3>Chicago</h3>
-			// 	<ul>
-			// 		<li>Temperature: </li>
-			// 		<li>Precipitation: </li>
-			// 		<li>Sunup: </li>
-			// 		<li>Sundown: </li>
-			// 	</ul>
-			// </div>";
-
-      display.appendChild(newCard)
+      display.appendChild(newCard);
     }
   }
 );

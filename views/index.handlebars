@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>My beautiful homepage</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="public/css/style.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<header>
@@ -21,10 +21,11 @@
 			<h1>Home</h1>
 			<p>Welcome to my Weather application!</p>
 			<div id="searchbar">
-				<form action="" method="post">
-					<label for="search">Enter your postal code:</label>
+				<form action="" id="search-form" method="post">
+					<label for="search">Enter your 5-digit ZIP code:</label>
 					<input type= "number" name="search" id="search">
 					<input class="button" type="submit" name="submit" value="Submit">
+					<div class="msg"></div>
 				</form>
 			</div>
 		</div>
@@ -64,14 +65,15 @@
 			</div>
 		</div>
 		<div class="clr"></div>
+		<script src="public/weatherpage.js"></script>
 	</body>
 	<footer>
-		<ul>
+		<!-- <ul>
 			<li>This page will be where the majority of work is done.</li>
 			<li>It will by default display the top three queried locations, or substitute large cities of my choice</li>
 			<li>Users will be prompted to enter a postal code to a location for which they would like to know the weather</li>
 			<li>The post request will send the user back to the home page but with only info on the specified location</li>
 			<li>Most of the rendering of this page will depend on JS</li>
-		</ul>
+		</ul> -->
 	</footer>
 </html>

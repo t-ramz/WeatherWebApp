@@ -1,32 +1,110 @@
 'use strict';
 
 const express = require("express");
+const bodyParser = require('body-parser');
+const exphbs = require('express-handlebars');
+const path = require('path');
+const nodemailer = require('nodemailer');
+const dotenv = require ('dotenv');
+dotenv.config();
+
 const weather = express();
 
-weather.use(express.static(__dirname+'/public')); //use public resources
+weather.use('/public', express.static(path.join(__dirname, 'public'))); //use public resources
+
+//handlebars initialization
+weather.engine('handlebars', exphbs());
+weather.set('view engine', 'handlebars');
+
+//bodyParser stuff
+weather.use(bodyParser.urlencoded({ extended: false }));
+weather.use(bodyParser.json());
 
 var router = express.Router();
-var path = __dirname + '/views/';
+var myPath = path.join(__dirname, 'views/');
 
 
 //Root
-router.get("/", (req,res) =>
+weather.get("/", (req,res) =>
 	{
-		res.sendFile(path + "index.html");
+		res.render('index', {layout: false});
 	}
 );
 
 //About
-router.get("/about", (req,res) =>
+weather.get("/about", (req,res) =>
 	{
-		res.sendFile(path + "about.html");
+		res.render('about', {layout: false});
 	}
 );
 
 //Contact
-router.get("/contact", (req,res) =>
+weather.get("/contact", (req,res) =>
 	{
-		res.sendFile(path + "contact.html");
+		res.render('contact', {layout: false});
+	}
+);
+
+//Mail section
+weather.post('/sendEmail', (req, res) =>
+	{
+		const EMAIL_HTML_BODY = `
+		<p>Name: ${req.body.name}</p>
+		<p>Email: ${req.body.email}</p>
+		<p>Concerns: ${req.body.message}`;
+
+		const AUTH_ENV = {
+			user: process.env.EMAIL,
+			pass: process.env.PASSWORD
+		}
+
+		let transporter = nodemailer.createTransport(
+			{
+				host: "smtp.gmail.com",
+				port: 587,
+				secure: false,
+				auth: AUTH_ENV,
+				tls:
+				{
+					rejectUnauthorized: false
+				}
+			}
+		);
+
+		let mailOptions =
+		{
+			from: `${process.env.OP}\'s Weather App <user@example.com>`,
+			to: process.env.PMAIL,
+			cc: null,
+			bcc: null,
+			subject: `${process.env.OP}\'s App Contact`,
+			html: EMAIL_HTML_BODY
+		};
+
+		transporter.sendMail(mailOptions, (err, info) =>
+			{
+				if(err)
+				{
+					console.log(err);
+					res.render('contact',
+						{
+							msg: "Contact email FAILED to send.",
+							layout: false
+						}
+					);
+				}
+				else
+				{
+					console.log('Message sent: %s', info.messageId);
+					res.render('contact',
+						{
+							msg: "Contact email SUCCESSFULLY sent.",
+							layout: false
+						}
+					);
+				}
+			}
+		);
 	}
 );
 
@@ -34,7 +112,7 @@ router.get("/contact", (req,res) =>
 weather.use("/",router);
 weather.use("*", (req,res) =>
 	{
-		res.sendFile(path + "404.html");
+		res.render('404', {layout: false});
 	}
 );
 

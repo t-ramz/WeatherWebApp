@@ -8,9 +8,17 @@
 		"node": ">=8.0.0"
 	},
 	"scripts": {
-		"start": "node weather.js"
+		"start": "node weather.js",
+		"dev": "nodemon weather"
 	},
 	"dependencies": {
-		"express": "latest"
+		"body-parser": "^1.19.0",
+		"dotenv": "^8.2.0",
+		"express": "latest",
+		"express-handlebars": "^5.1.0",
+		"nodemailer": "^6.4.10"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.4"
 	}
 }

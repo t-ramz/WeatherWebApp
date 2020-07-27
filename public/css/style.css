@@ -3,6 +3,18 @@
 	clear: both;
 }
 
+/* Errors */
+
+.error
+{
+	width: 50%;
+	color: #fff;
+	background-color: red;
+	border-radius: 10px;
+	margin: auto;
+	padding: 1%
+}
+
 /* Header stuff */
 
 .container, .contact-form
@@ -96,6 +108,17 @@ body
 	margin: 1% .5%;
 }
 
+.cards .searchcard
+{
+	width: 100%;
+	padding: 0.25em;
+	border: #fff solid 0.05em;
+	border-radius: 15px;
+	background-color: #f2f2f2;
+	box-sizing: border-box;
+	margin: 1% .5%;
+}
+
 .cards ul
 {
 	list-style: none;
@@ -103,7 +126,7 @@ body
 	font-size: large;
 }
 
-.card img
+.card img, .searchcard img
 {
 	width: 100%;
 	border-radius: 15px;

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Contact page</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="public/css/style.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	</head>
@@ -22,8 +22,8 @@
 		<div class="container">
 			<h1>Contact Page</h1>
 
-			<!-- Form to fill out and send via some JS method defined later -->
-			<form class="contact-form" action="/" method="post">
+			{{msg}}
+			<form class="contact-form" action="sendEmail" method="post">
 				<div class="msg"></div>
 				<label for="name">Name: </label>
 				<input type="text" name="name" id="name" placeholder="John Doe">
@@ -38,7 +38,7 @@
 
 			</form>
 		</div>
-		<script src="main.js"></script>
+		<script src="public/main.js"></script>
 	</body>
 	<footer>
 		<ul>

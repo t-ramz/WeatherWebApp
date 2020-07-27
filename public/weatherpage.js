@@ -34,6 +34,7 @@ searchForm.addEventListener('submit',
       newCard.appendChild(title);
 
       // List definition
+      // Could possibly be refactored into for-each
       const ul = document.createElement('ul');
         // List elements
         const temp = document.createElement('li');
@@ -48,7 +49,7 @@ searchForm.addEventListener('submit',
         ul.appendChild(perc);
         ul.appendChild(sup);
         ul.appendChild(sdn);
-        
+
       newCard.appendChild(ul);
 
       // newCard.innerHTML =

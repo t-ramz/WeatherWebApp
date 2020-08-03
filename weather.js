@@ -8,6 +8,9 @@ const nodemailer = require('nodemailer');
 const dotenv = require ('dotenv');
 dotenv.config();
 
+// mysql db connection
+const conn = require('./db_connection');
+
 const weather = express();
 
 weather.use('/public', express.static(path.join(__dirname, 'public'))); //use public resources
@@ -105,6 +108,13 @@ weather.post('/sendEmail', (req, res) =>
 				}
 			}
 		);
+	}
+);
+
+//DB backed weather
+weather.post('/fetchWeatherFor', (res,req) =>
+	{
+		res.render('index', {msg: "Rendered all user rows.", layout: false, data: results});
 	}
 );
 

@@ -26,9 +26,6 @@ weather.use(bodyParser.json());
 var router = express.Router();
 var myPath = path.join(__dirname, 'views/');
 
-// Check for presence of database
-conn.query("SELECT * FROM INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA =\"weather\" AND TABLE_NAME = \"Locations\"")
-
 
 //Root
 weather.get("/", (req,res) =>

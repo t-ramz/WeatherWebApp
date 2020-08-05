@@ -139,8 +139,8 @@ weather.post('/fetchWeatherFor', (req,res) =>
 					let loc = "Cookeville";
 					let temp = 27.12;
 					let rain = 50;
-					let sup = '6:20';
-					let sdn = '20:50';
+					let sup = 620;
+					let sdn = 2050;
 					let newLocationQuery = "INSERT INTO Weather (Postal, Location, Temp, Precip, Sup, Sdn) VALUES (?, ?, ?, ?, ?, ?)";
 					conn.query(newLocationQuery, [Number(search), loc, temp, rain, sup, sdn],
 						(err, results, fields) =>

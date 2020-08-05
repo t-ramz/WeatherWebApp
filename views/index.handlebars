@@ -21,7 +21,8 @@
 			<h1>Home</h1>
 			<p>Welcome to my Weather application!</p>
 			<div id="searchbar">
-				<form action="" id="search-form" method="post">
+				{{msg}}
+				<form action="fetchWeatherFor" id="search-form" method="post">
 					<label for="search">Enter your 5-digit ZIP code:</label>
 					<input type= "number" name="search" id="search">
 					<input class="button" type="submit" name="submit" value="Submit">
@@ -66,6 +67,17 @@
 		</div>
 		<div class="clr"></div>
 		<script src="public/weatherpage.js"></script>
+		{{#each data}}
+			<script type="text/javascript">
+				clear();
+				let loc = {{this.Location}};
+				let p_temp = {{this.Temp}};
+				let p_pre = {{this.Precip}};
+				let p_sup = {{this.Sup}};
+				let p_sdn = {{this.Sdn}};
+				newCard(loc, p_temp, p_pre, p_sup, p_sdn);
+			</script>
+		{{/each}}
 	</body>
 	<footer>
 		<!-- <ul>

@@ -26,6 +26,9 @@ weather.use(bodyParser.json());
 var router = express.Router();
 var myPath = path.join(__dirname, 'views/');
 
+// Check for presence of database
+conn.query("SELECT * FROM INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA =\"weather\" AND TABLE_NAME = \"Locations\"")
+
 
 //Root
 weather.get("/", (req,res) =>
@@ -112,9 +115,54 @@ weather.post('/sendEmail', (req, res) =>
 );
 
 //DB backed weather
-weather.post('/fetchWeatherFor', (res,req) =>
+weather.post('/fetchWeatherFor', (req,res) =>
 	{
-		res.render('index', {msg: "Rendered all user rows.", layout: false, data: results});
+		let search = req.body.search;
+		conn.query("SELECT * FROM Weather",
+			(err, results, fields) =>
+			{
+				if(err)
+				{
+					console.log(err);
+					res.render('index', {msg: "Search error.", layout: false});
+				}
+				else
+				{
+					for (var i in results)
+					{
+						if (search == results[i].Postal)
+						{
+							let result = [results[i]];
+							console.log(result);
+							res.render('index', {msg: "Found entry.", layout: false, data: result});
+							return;
+						}
+					}
+					console.log("Creating new entry");
+					let loc = "Cookeville";
+					let temp = 27.12;
+					let rain = 50;
+					let sup = '6:20';
+					let sdn = '20:50';
+					let newLocationQuery = "INSERT INTO Weather (Postal, Location, Temp, Precip, Sup, Sdn) VALUES (?, ?, ?, ?, ?, ?)";
+					conn.query(newLocationQuery, [Number(search), loc, temp, rain, sup, sdn],
+						(err, results, fields) =>
+						{
+							if(err)
+							{
+								console.log(err);
+								res.render('index', {msg: "Insert error.", layout: false});
+							}
+							else
+							{
+								console.log(fields);
+								res.render('index', {msg: "New entry.", layout: false, data: results});
+							}
+						}
+					);
+				}
+			}
+		);
 	}
 );
 
